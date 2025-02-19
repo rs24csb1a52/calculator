@@ -34,54 +34,44 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.col123 {
+.inout {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 75%;
-}
-
-.col4 {
-    display: flex;
-    flex-direction: column;
-}
-
-.btns {
-    display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    border-radius: 20px;
-}
-
-.row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
 }
 
 input {
     background-color: transparent;
     color: white;
-    width: 100%;
-    height: 10vw;
+    width: 90%; /* Prevents overflow */
+    height: 8vw;
     border: none;
     border-radius: 20px;
     text-align: right;
     font-size: 2rem;
-    padding-right: 15px;
+    padding: 10px;
+    outline: none; /* Removes focus outline */
 }
 
 .out {
     color: white;
-    width: 100%;
-    height: 10vw;
+    width: 90%; /* Matches input width */
+    height: 8vw;
     font-size: 2rem;
     border-radius: 20px;
     padding: 10px;
-    padding-left: 40px;
     display: flex;
     align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .button {
@@ -128,28 +118,13 @@ input {
 
 /* Media Query for Larger Screens */
 @media (min-width: 900px) {
-    body {
-        padding-top: 5vh;
-    }
-
     .calculator {
         width: 20vw;
     }
 
-    .col123 {
-        width: 75%;
-    }
-
-    .btns {
-        width: 100%;
-    }
-
-    input {
-        height: 4vw;
-        font-size: 1.5rem;
-    }
-
+    input,
     .out {
+        width: 90%;
         height: 4vw;
         font-size: 1.5rem;
     }

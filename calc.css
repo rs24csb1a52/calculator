@@ -44,25 +44,26 @@ body {
 input {
     background-color: transparent;
     color: white;
-    width: 90%; /* Prevents overflow */
-    height: 8vw;
-    border: none;
-    border-radius: 20px;
+    width: 95%; /* Fits within calculator */
+    height: 4vw;
+    border: 2px solid white;
+    border-radius: 15px;
     text-align: right;
     font-size: 2rem;
     padding: 10px;
-    outline: none; /* Removes focus outline */
+    outline: none;
 }
 
 .out {
     color: white;
-    width: 90%; /* Matches input width */
-    height: 8vw;
+    width: 95%; /* Same as input */
+    height: 4vw;
     font-size: 2rem;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px;
     display: flex;
     align-items: center;
+    justify-content: flex-end; /* Align text properly */
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -124,7 +125,7 @@ input {
 
     input,
     .out {
-        width: 90%;
+        width: 95%;
         height: 4vw;
         font-size: 1.5rem;
     }

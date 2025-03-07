@@ -1,14 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root {
     --calculator-color: #000000c2;
     --button-color: #3d3d3d85;
-    --operator-color: #5ca3ff75;
-    --control-color: #8888888a;
 }
 
 body {
@@ -16,10 +13,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    padding-top: 10vh;
     background-image: url(./image.png);
-    background-size: cover;
-    background-position: center;
 }
 
 .calculator {
@@ -30,13 +25,116 @@ body {
     width: 40vw;
     background-color: var(--calculator-color);
     border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
 }
-.row{
-display:flex;
-    
+
+.col123 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: calc(40vw*3/4);
 }
+
+.col4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 40vw;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    background-color: #00000000;
+    color: white;
+    width: 42vw;
+    height: 10vw;
+    border: none;
+    border-radius: 20px;
+    /* Input overflow fixes */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: x-large;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: right;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+.out {
+    color: white;
+    width: 40vw;
+    height: 10vw;
+    font-size: x-large;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button {
+    background-color: #3d3d3d85;
+    color: rgb(255, 255, 255);
+    width: 7vw;
+    height: 7vw;
+    border-radius: 15px;
+    margin: 1vw;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    -webkit-filter: blur(2px);
+}
+
+.button:active {
+    -webkit-filter: blur(10px);
+}
+
+.operator {
+    background-color: #5ca3ff75;
+    margin: 1vw;
+}
+
+.control {
+    background-color: #8888888a;
+}
+
+.zero {
+    width: 20vw;
+}
+
+.equal {
+    height: 12vw;
+}
+
+.plus {
+    height: 12vw;
+}
+
+/* Input overflow specific styles */
 .inout {
     width: 100%;
     display: flex;
@@ -44,108 +142,130 @@ display:flex;
     align-items: center;
 }
 
-input {
-    background-color: transparent;
-    color: white;
-    width: 95%; /* Fits within calculator */
-    height: 4vw;
-    border: 2px solid white;
-    border-radius: 15px;
-    text-align: right;
-    font-size: 2rem;
-    padding: 10px;
-    outline: none;
-}
-
-.out {
-    color: white;
-    width: 95%; /* Same as input */
-    height: 4vw;
-    font-size: 2rem;
-    border-radius: 15px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align text properly */
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.btns {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border-radius: 20px;
-}
-
-.button {
-    background-color: var(--button-color);
-    color: white;
-    width: 7vw;
-    height: 7vw;
-    border-radius: 15px;
-    margin: 0.5vw;
-    text-align: center;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-    filter: brightness(1.2);
-}
-
-.button:active {
-    filter: brightness(0.8);
-    transform: scale(0.95);
-}
-
-.operator {
-    background-color: var(--operator-color);
-}
-
-.control {
-    background-color: var(--control-color);
-}
-
-.zero {
-    width: 15vw;
-}
-
-.equal,
-.plus {
-    height: 14vw;
-}
-
-/* Media Query for Larger Screens */
 @media (min-width: 900px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10vh;
+        background-image: url(./image.png);
+    }
+    
     .calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
         width: 20vw;
+        background-color: var(--calculator-color);
+        border-radius: 20px;
+        padding: 10px;
     }
-
-    input,
+    
+    .col123 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: calc(20vw*3/4);
+    }
+    
+    .col4 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 20vw;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    input {
+        background-color: #00000000;
+        color: white;
+        width: 21vw;
+        height: 4vw;
+        border: none;
+        border-radius: 20px;
+        /* Desktop input overflow fixes */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: x-large;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: right;
+        white-space: nowrap;
+    }
+    
     .out {
-        width: 95%;
+        margin-left: 4px;
+        color: white;
+        width: 20vw;
         height: 4vw;
-        font-size: 1.5rem;
+        font-size: x-large;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
-
+    
     .button {
-        width: 4vw;
-        height: 4vw;
-        font-size: 1.2rem;
+        background-color: var(--button-color);
+        color: rgb(255, 255, 255);
+        width: 3.5vw;
+        height: 3.5vw;
+        border-radius: 15px;
+        margin: 1vw;
+        text-align: center;
+        font-size: x-large;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        -webkit-filter: blur(2px);
+    }
+    
+    .operator {
+        background-color: #5ca2ffc4;
         margin: 0.5vw;
     }
-
-    .zero {
-        width: 9vw;
+    
+    .control {
+        background-color: #888888c4;
     }
-
-    .equal,
+    
+    .zero {
+        width: 11.5vw;
+    }
+    
+    .equal {
+        height: 7.5vw;
+    }
+    
     .plus {
-        height: 9vw;
+        height: 7.5vw;
     }
 }

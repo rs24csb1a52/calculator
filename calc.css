@@ -33,7 +33,10 @@ body {
     padding: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
+.row{
+display:flex;
+    
+}
 .inout {
     width: 100%;
     display: flex;
